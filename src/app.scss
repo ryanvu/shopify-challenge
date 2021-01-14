@@ -1,0 +1,46 @@
+@use "./partials/mixins" as *;
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Noto Sans;
+    color: white;
+}
+
+body{
+    background: linear-gradient(to bottom, #0e0e0e, #1c2b3a, #004d61, #007374, #00976d, #3da261, #63ac53, #88b445, #7fac43, #75a442, #6d9c40, #64943e) fixed;
+    // background-repeat: no-repeat;
+}
+
+.home{
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    @include tablet{
+        min-width: 700px;
+        margin: 0 auto;
+    }
+    
+    gap: 1rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    gap: 1rem;
+
+    @include tablet{
+        flex-direction: row;
+    }
+}
+

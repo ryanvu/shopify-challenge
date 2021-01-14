@@ -1,0 +1,14 @@
+import React from 'react';
+import './Search.scss';
+
+const Search = ({ handleChange }) => {
+    return (
+        <div className="search">
+            <label htmlFor="movieSearch" className="search__label">Movie Title</label>
+            <input onChange={handleChange} className="search__input"type="text"/>
+            <span className="search__help">Search a title of a movie! (e.g. Dodgeball, Harry Potter, etc.)</span>
+        </div>
+    )
+}
+
+export default Search
