@@ -22,10 +22,15 @@
             justify-content: space-between;
         }
     }
+   
 
     &__title{
         margin: 0.5rem;
+        color: #212326;
     }
+    
+
+    
 
     &__btn{
         align-self: center;
@@ -34,5 +39,14 @@
         padding: 1rem;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
+
+        &:active, :focus{
+            outline: none;
+        }
+
+        &-disabled{
+            @extend .movies__btn;
+            background: #268060;
+        }
     }
 }

@@ -19,6 +19,8 @@
         box-shadow: 5px 5px 24px rgba(0,0,0,0.5);
         transition: 1s box-shadow ease-in-out;
 
+ 
+
         &:focus, :active{
             outline: none;
             box-shadow: inset -5px -5px 24px rgba(0,0,0,0.2);

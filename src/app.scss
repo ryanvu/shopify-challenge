@@ -13,10 +13,40 @@ body{
 }
 
 .home{
+    position: relative;
     margin: 1rem;
     display: flex;
     flex-direction: column;
 
+    @include desktop{
+        margin: 5rem 0 1rem;
+    }
+    
+    &__title{
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        font-style: italic;
+
+        &::before{
+            background: url('./assets/shopify.svg');
+            background-size:2.53rem 2.5rem;
+            display: inline-block;
+            height: 2.5rem;
+            width: 2.5rem;
+            margin-right: 0.5rem;
+            content: "";
+            
+        }
+    }
+
+}
+
+.logo{
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
 }
 
 .wrap{

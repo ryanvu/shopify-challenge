@@ -18,7 +18,28 @@
     }
 
     &__movie{
+        @include glass(7.5px);
+        
         display: flex;
         justify-content: space-between;
+        font-size: 0.75rem;
+
+        &-name{
+            align-self: flex-start;
+            margin: 0.5rem 1rem;
+            color: #212326;
+        }
+    }
+
+    &__btn{
+        background: #C43256;
+        border: none;
+        padding: 1rem;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+
+        &:active, :focus{
+            outline: none;
+        }
     }
 }

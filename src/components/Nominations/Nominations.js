@@ -8,13 +8,14 @@ const Nominations = ({nom, handleDelete}) => {
 
     return (
         <div className="nominations">
-            <h3 className="nominations__title">nominations</h3>
+            <h3 className="nominations__title">Nominations</h3>
+            {noms.length === 0 && <p>You have no movies nominated!</p>}
             <ul className="nominations__list">
                 {noms.map(n => {
                 return( 
                 <li className="nominations__movie"key={`${n.imdbID}noM`} id={n.imdbID}>
-                    {n.Title}
-                    <button className="nominations__btn"onClick={()=>{deleteFilm(n.imdbID)}}>deleto</button>
+                    <p className="nominations__movie-name">{n.Title} ({n.Year})</p>
+                    <button className="nominations__btn"onClick={()=>{deleteFilm(n.imdbID)}}>Delete</button>
                 </li>
                 )
                 })}
