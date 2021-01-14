@@ -37,9 +37,15 @@
         padding: 1rem;
         border-bottom-right-radius: 10px;
         border-top-right-radius: 10px;
+        transition: all 0.1s ease-in-out;
 
         &:active, :focus{
             outline: none;
+        }
+
+        &:hover{
+            transition: all 0.1s ease-in-out;
+            transform: scale(1.1);
         }
     }
 }

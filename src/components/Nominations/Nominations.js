@@ -1,7 +1,20 @@
 import React from 'react';
 import './Nominations.scss';
 import { useNominations } from '../../contexts/NominationsContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
+const nominanimation = {
+    hidden:{
+        y: "-200%"
+    },
+    visible:{
+        y:"0%",
+        transition:{
+            duration: 1,
+            type: "spring"
+        }
+    }
+}
 
 const Nominations = ({nom, handleDelete}) => {
     const { noms, deleteFilm } = useNominations();
@@ -12,12 +25,12 @@ const Nominations = ({nom, handleDelete}) => {
             {noms.length === 0 && <p>You have no movies nominated!</p>}
             <ul className="nominations__list">
                 {noms.map(n => {
-                return( 
-                <li className="nominations__movie"key={`${n.imdbID}noM`} id={n.imdbID}>
-                    <p className="nominations__movie-name">{n.Title} ({n.Year})</p>
-                    <button className="nominations__btn"onClick={()=>{deleteFilm(n.imdbID)}}>Delete</button>
-                </li>
-                )
+                return(
+                        <motion.li initial="hidden" animate="visible" variants={nominanimation}className="nominations__movie"key={`${n.imdbID}noM`} id={n.imdbID}>
+                            <p className="nominations__movie-name">{n.Title} ({n.Year})</p>
+                            <button className="nominations__btn"onClick={()=>{deleteFilm(n.imdbID)}}>Delete</button>
+                        </motion.li>
+                    )
                 })}
             </ul>
         </div>

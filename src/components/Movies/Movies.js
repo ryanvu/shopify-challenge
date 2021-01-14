@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Movies.scss';
 import { useNominations } from '../../contexts/NominationsContext';
 
+import { motion } from 'framer-motion';
+
 const Movies = ({input, loading, result}) => {
 
     const { noms, nominateFilm } = useNominations();
@@ -20,9 +22,11 @@ const Movies = ({input, loading, result}) => {
               return (
               <li className="movies__list-item" key={m.imdbID} id={m.imdbID}>
                     <p className="movies__title">{m.Title} ({m.Year}) </p>
-                    
+                  
                 {!nominatedList.includes(m.imdbID) ? 
-                <button className="movies__btn" onClick={()=>{nominateFilm(m)}}>Nominate</button> : 
+                <motion.button 
+                whileHover={{scale: 1.1}}
+                className="movies__btn" onClick={()=>{nominateFilm(m)}}>Nominate</motion.button> : 
                 <button className="movies__btn-disabled" disabled onClick={()=>{nominateFilm(m)}}>Nominated</button>}
               </li>
               )
