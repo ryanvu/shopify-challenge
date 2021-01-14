@@ -33,10 +33,11 @@
     
 
     &__btn{
-        align-self: center;
+        align-self: stretch;
+        font-size: 0.75rem;
         background: #35465C;
         border: none;
-        padding: 1rem;
+        padding: 0.5rem;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
 

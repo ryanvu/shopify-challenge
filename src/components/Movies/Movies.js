@@ -4,7 +4,7 @@ import { useNominations } from '../../contexts/NominationsContext';
 
 import Error from '../Error/Error';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Movies = ({input, loading, result}) => {
 
@@ -18,11 +18,19 @@ const Movies = ({input, loading, result}) => {
             {input && <p className="movies__result">search result for '{input}'</p>}
             {result.length ===  0 && <p>Search for a movie</p> }
             {!loading && result.Response === "True" &&
-            
-          <ul className="movies__list">
-            {result.Search.map((m) => {
+       
+          <motion.ul 
+          initial={{height: "0"}}
+          animate={{height: "100%"}}
+          transition={{duration: 0.5, type:"tween", staggerChildren: 0.5}}
+          className="movies__list">
+            {result.Search.map((m, i) => {
               return (
-              <li className="movies__list-item" key={m.imdbID} id={m.imdbID}>
+              <motion.li 
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{delay: Number.parseFloat(`0.${i}`) + 0.1}}
+              className="movies__list-item" key={m.imdbID} id={m.imdbID}>
                     <p className="movies__title">{m.Title} ({m.Year}) </p>
                   
                 {!nominatedList.includes(m.imdbID) ? 
@@ -30,11 +38,10 @@ const Movies = ({input, loading, result}) => {
                 whileHover={{scale: 1.1}}
                 className="movies__btn" onClick={()=>{nominateFilm(m)}}>Nominate</motion.button> : 
                 <button className="movies__btn-disabled" disabled onClick={()=>{nominateFilm(m)}}>Nominated</button>}
-              </li>
+              </motion.li>
               )
             })}
-          </ul>
-       
+          </motion.ul>  
         }
         {!loading && result.Response === "False" && result.Error !== "Incorrect IMDb ID." && 
         <Error err={result.Error}/>

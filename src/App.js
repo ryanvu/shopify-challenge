@@ -34,7 +34,6 @@ function App() {
   return (
     <NominationsProvider>
       <div className="home">
-        {/* <img className="logo" src={logo} alt=""/> */}
         <div className="wrap">
           <h1 className="home__title">The Shoppies</h1>
           <Search handleChange={handleChange}/>

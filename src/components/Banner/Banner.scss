@@ -1,0 +1,11 @@
+@use '../../partials/mixins' as *;
+
+.banner{
+    @include glass(7.5px);
+    margin: 1rem 0;
+    
+    &__text{
+        margin: 1rem;
+        color: #35465C;
+    }
+}
