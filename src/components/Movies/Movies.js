@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './Movies.scss';
 import { useNominations } from '../../contexts/NominationsContext';
 
+import Error from '../Error/Error';
+
 import { motion } from 'framer-motion';
 
 const Movies = ({input, loading, result}) => {
 
     const { noms, nominateFilm } = useNominations();
     const nominatedList = noms.map(n=>{return n.imdbID})
-    
+
     console.log(result)
     return (
         <div className="movies">
@@ -34,8 +36,8 @@ const Movies = ({input, loading, result}) => {
           </ul>
        
         }
-        {!loading && result.Response === "False" && 
-          <p className="movies__error">{result.Error === "Incorrect IMDb ID." ? "" : result.Error}</p>
+        {!loading && result.Response === "False" && result.Error !== "Incorrect IMDb ID." && 
+        <Error err={result.Error}/>
         }
         {loading && <p>loading..</p>}
         </div>

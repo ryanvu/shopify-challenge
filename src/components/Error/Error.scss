@@ -1,0 +1,21 @@
+@use '../../partials/mixins' as *;
+
+.error{
+    margin-top: 1rem;
+    align-self: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    @include glass(7.5px);
+    background: rgba( 248, 15, 15, 0.40 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); 
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+    &__msg{
+        color: #212326;
+    }
+    &__img{
+        height: 1.5rem;
+    }
+}

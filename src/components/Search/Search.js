@@ -6,7 +6,7 @@ const Search = ({ handleChange }) => {
         <div className="search">
             <label htmlFor="movieSearch" className="search__label">Movie Title</label>
             <input onChange={handleChange} className="search__input"type="text" placeholder="e.g. Inception, Avengers, etc."/>
-            <span className="search__help">Search a title of a movie! (e.g. Dodgeball, Harry Potter, etc.)</span>
+            <span className="search__help">Search up the title of a movie!</span>
         </div>
     )
 }
