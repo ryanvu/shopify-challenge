@@ -3,6 +3,7 @@ import './Nominations.scss';
 import { useNominations } from '../../contexts/NominationsContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import Banner from '../Banner/Banner';
+import Progress from '../Progress/Progress';
 
 const nominanimation = {
     hidden:{
@@ -19,14 +20,14 @@ const nominanimation = {
 
 const Nominations = () => {
     const { noms, deleteFilm } = useNominations();
-
     return (
         <div className="nominations">
             <h3 className="nominations__title">Nominations</h3>
-            {noms.length === 0 && <p>You have no movies nominated!</p>}
             <AnimatePresence>
                 {noms.length === 5 ? <Banner /> : null}
             </AnimatePresence>
+            <Progress />
+            
             <ul className="nominations__list">
                 {noms.map(n => {
                 return(

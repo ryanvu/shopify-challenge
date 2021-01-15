@@ -11,7 +11,6 @@ const Movies = ({input, loading, result}) => {
     const { noms, nominateFilm } = useNominations();
     const nominatedList = noms.map(n=>{return n.imdbID})
 
-    console.log(result)
     return (
         <div className="movies">
             {input === "" && <p className="movies__help">Please search for a movie!</p>}
