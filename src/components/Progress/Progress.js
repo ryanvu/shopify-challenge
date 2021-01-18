@@ -8,7 +8,7 @@ const Progress = () => {
     return (
         <div className="progress">
             <div className="progress__bar">
-            {noms.length === 0 && <p>You have no movies nominated!</p>}
+            {noms.length === 0 && <p className="progress__notice">You have no movies nominated!</p>}
                 <AnimatePresence>
                     {noms.map((m,i)=>{
                         return <motion.div
