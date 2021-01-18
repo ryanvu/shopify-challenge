@@ -1,9 +1,10 @@
 @use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
 *, *::after, *::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Noto Sans;
+    font-family: "Noto Sans";
     color: white;
 }
 

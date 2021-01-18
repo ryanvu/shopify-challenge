@@ -9,7 +9,7 @@ import Nominations from './components/Nominations/Nominations';
 //context
 import { NominationsProvider } from './contexts/NominationsContext';
 
-const apiUrl = "http://www.omdbapi.com/?apikey=cc139321&s="
+const apiUrl = "https://www.omdbapi.com/?apikey=cc139321&s="
 
 function App() {
   const [result, setResult] = useState([]);

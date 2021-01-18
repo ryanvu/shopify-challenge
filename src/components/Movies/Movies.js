@@ -33,9 +33,8 @@ const Movies = ({input, loading, result}) => {
                     <p className="movies__title">{m.Title} ({m.Year}) </p>
                   
                 {!nominatedList.includes(m.imdbID) ? 
-                <motion.button 
-                whileHover={{scale: 1.1}}
-                className="movies__btn" onClick={()=>{nominateFilm(m)}}>Nominate</motion.button> : 
+                <button
+                className="movies__btn" onClick={()=>{nominateFilm(m)}}>Nominate</button> : 
                 <button className="movies__btn-disabled" disabled onClick={()=>{nominateFilm(m)}}>Nominated</button>}
               </motion.li>
               )
