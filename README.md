@@ -9,3 +9,4 @@ In the project directory, you can run:
 
 ### `npm start`
 
+Netlify Link: https://the-shopify-shoppies.netlify.app/
