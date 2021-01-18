@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Nominations.scss';
 import { useNominations } from '../../contexts/NominationsContext';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Movies.scss';
 import { useNominations } from '../../contexts/NominationsContext';
 
 import Error from '../Error/Error';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const Movies = ({input, loading, result}) => {
 

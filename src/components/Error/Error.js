@@ -10,6 +10,8 @@ const ErrorSwitch = (msg) => {
             return {img: boom, error: msg};
         case "Movie not found!":
             return {img: huh, error: msg}; 
+        default:
+            console.log('There is no error message'); 
     }
 }
 

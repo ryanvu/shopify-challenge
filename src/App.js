@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './app.scss';
 
-import logo from './assets/shopify.svg'
 //components
 import Search from './components/Search/Search';
 import Movies from './components/Movies/Movies';
